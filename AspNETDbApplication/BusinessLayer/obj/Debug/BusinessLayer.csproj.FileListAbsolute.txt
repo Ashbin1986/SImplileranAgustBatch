@@ -1,0 +1,11 @@
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\bin\Debug\DataLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\bin\Debug\DataTransferModels.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\bin\Debug\DataTransferModels.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete

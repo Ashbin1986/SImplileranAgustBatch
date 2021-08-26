@@ -1,0 +1,5 @@
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataTransferModels\bin\Debug\DataTransferModels.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataTransferModels\bin\Debug\DataTransferModels.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataTransferModels\obj\Debug\DataTransferModels.csproj.CoreCompileInputs.cache
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataTransferModels\obj\Debug\DataTransferModels.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataTransferModels\obj\Debug\DataTransferModels.pdb

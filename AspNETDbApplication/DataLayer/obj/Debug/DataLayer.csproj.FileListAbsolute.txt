@@ -1,0 +1,9 @@
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\bin\Debug\DataLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\bin\Debug\DataLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\obj\Debug\DataLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\obj\Debug\DataLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\bin\Debug\DataTransferModels.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\bin\Debug\DataTransferModels.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete

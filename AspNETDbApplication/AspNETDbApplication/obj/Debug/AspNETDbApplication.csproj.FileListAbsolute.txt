@@ -67,8 +67,14 @@ C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\Antlr3.Runtime.pdb
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\obj\Debug\AspNETDbApplication.csproj.AssemblyReference.cache
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\obj\Debug\AspNETDbApplication.csproj.CoreCompileInputs.cache
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\obj\Debug\AspNETDbApplication.csproj.CopyComplete
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\obj\Debug\AspNETDbApplication.dll
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\obj\Debug\AspNETDbApplication.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\BusinessLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\DataTransferModels.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\DataLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\BusinessLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\DataTransferModels.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\bin\DataLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\AspNETDbApplication\obj\Debug\AspNETDbApplication.csproj.AssemblyReference.cache
