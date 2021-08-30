@@ -1,0 +1,37 @@
+﻿@model List<MVCApplication30Aug.Models.Employee>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewEmployee</title>
+</head>
+<body>
+    @using (Html.BeginForm("ViewEmployee", "Admin", FormMethod.Get))
+    {
+        <table border="1" cellpadding="6">
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee Age</th>
+                <th>Employee Address</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @item.EmpName </td>
+                    <td> @item.EmpAge </td>
+                    <td> @item.Address </td>
+                </tr>
+            }
+
+        </table>
+
+
+    }
+
+</body>
+</html>

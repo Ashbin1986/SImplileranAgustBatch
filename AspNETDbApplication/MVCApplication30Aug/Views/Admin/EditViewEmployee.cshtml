@@ -1,0 +1,35 @@
+﻿@model MVCApplication30Aug.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditViewEmployee</title>
+</head>
+<body>
+    @using (Html.BeginForm("UpdateEmployee", "Admin", FormMethod.Post))
+    {
+        <div>
+            Employee Name : @Html.TextBox("EmpName")
+            @Html.ValidationMessageFor(c => c.EmpName)
+        </div>
+        <div>
+            Employee Address : @Html.TextBoxFor(c => c.Address)
+            @Html.ValidationMessageFor(c => c.Address)
+        </div>
+        <div>
+            Employee Age : @Html.TextBoxFor(c => c.EmpAge)
+            @Html.ValidationMessageFor(c => c.EmpAge)
+        </div>
+        <br />
+
+        <input type="submit" value="Save/Update" />
+        @Html.ActionLink("Dashboard", "ViewEmployee", "Admin")
+        @Html.ActionLink("Add Employee", "AddEmployee", "Admin")
+    }
+</body>
+</html>
