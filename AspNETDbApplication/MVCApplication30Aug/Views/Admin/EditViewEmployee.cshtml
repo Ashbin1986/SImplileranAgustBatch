@@ -13,10 +13,11 @@
 <body>
     @using (Html.BeginForm("UpdateEmployee", "Admin", FormMethod.Post))
     {
-        <div>
-            Employee Name : @Html.TextBox("EmpName")
-            @Html.ValidationMessageFor(c => c.EmpName)
-        </div>
+    <div>
+
+        @Html.LabelFor(c => c.EmpName) : @Html.TextBox("EmpName")
+        @Html.ValidationMessageFor(c => c.EmpName)
+    </div>
         <div>
             Employee Address : @Html.TextBoxFor(c => c.Address)
             @Html.ValidationMessageFor(c => c.Address)

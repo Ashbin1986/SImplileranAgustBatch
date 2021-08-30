@@ -1,0 +1,21 @@
+Customer 
+	CustomerId
+	FName
+	Lname
+	Email
+	Password
+	CreatedDate
+
+Category
+	CategoryId , CategoryName
+
+Products
+	ProductId ,ProductName , IsAvailable , BrandName,CategoryId
+
+Orders
+	OrderId , OrderNumber,Productid,TotalCost,OrderedDate
+
+
+Customer_Orders
+CustomerOrderID , CustomerId ,  OrderId 
+

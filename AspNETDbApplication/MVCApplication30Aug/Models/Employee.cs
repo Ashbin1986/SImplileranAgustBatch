@@ -9,6 +9,7 @@ namespace MVCApplication30Aug.Models
     public class Employee
     {
         [Required]
+        [Display(Name ="Emp Name")]
         public string EmpName { get; set; }
 
         [Required]

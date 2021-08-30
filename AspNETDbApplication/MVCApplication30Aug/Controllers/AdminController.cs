@@ -23,7 +23,14 @@ namespace MVCApplication30Aug.Controllers
             lstEmployee.Add(new Employee { EmpName = "User2", EmpAge = 35, Address = "Singapore" });
             lstEmployee.Add(new Employee { EmpName = "User3", EmpAge = 25, Address = "Canada" });
 
-            return View(lstEmployee);
+            var count = TempData["NoofRecords"];
+
+            ViewData["EmployeeList"] = lstEmployee;
+            ViewBag.EmployeeRecords = lstEmployee;
+            TempData["Employee"] = lstEmployee;
+            ViewBag.PageTitle = "Employee Records";
+            ViewBag.Count = count;
+            return View();
         }
 
         public ActionResult AddEmployee()
@@ -36,6 +43,7 @@ namespace MVCApplication30Aug.Controllers
         {
             if(ModelState.IsValid)
             {
+                TempData["NoofRecords"] = 100;
                 //Save
                return RedirectToAction("ViewEmployee");
             }

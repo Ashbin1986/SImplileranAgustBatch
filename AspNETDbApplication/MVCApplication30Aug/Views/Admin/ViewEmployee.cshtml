@@ -1,5 +1,6 @@
 ﻿@model List<MVCApplication30Aug.Models.Employee>
 @{
+    @ViewBag.PageTitle;
     Layout = null;
 }
 
@@ -8,9 +9,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ViewEmployee</title>
+    <title>View Employee</title>
 </head>
 <body>
+    <h2> @ViewBag.PageTitle</h2>
+    @ViewBag.Count
+
     @using (Html.BeginForm("ViewEmployee", "Admin", FormMethod.Get))
     {
         <table border="1" cellpadding="6">
@@ -19,7 +23,25 @@
                 <th>Employee Age</th>
                 <th>Employee Address</th>
             </tr>
-            @foreach (var item in Model)
+            @*@foreach (var item in ViewData["EmployeeList"] as List<MVCApplication30Aug.Models.Employee>)
+                {
+                    <tr>
+                        <td> @item.EmpName </td>
+                        <td> @item.EmpAge </td>
+                        <td> @item.Address </td>
+                    </tr>
+                }*@
+
+            @*@foreach (var item in ViewBag.EmployeeRecords)
+                {
+                    <tr>
+                        <td> @item.EmpName </td>
+                        <td> @item.EmpAge </td>
+                        <td> @item.Address </td>
+                    </tr>
+                }*@
+
+            @foreach (var item in TempData["Employee"] as List<MVCApplication30Aug.Models.Employee>)
             {
                 <tr>
                     <td> @item.EmpName </td>
