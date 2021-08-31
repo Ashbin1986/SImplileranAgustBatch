@@ -13,11 +13,14 @@
 <body>
     @using (Html.BeginForm("UpdateEmployee", "Admin", FormMethod.Post))
     {
-    <div>
+        @*@Html.Partial("LoginView")*@
+        
 
-        @Html.LabelFor(c => c.EmpName) : @Html.TextBox("EmpName")
-        @Html.ValidationMessageFor(c => c.EmpName)
-    </div>
+        <div>
+
+            @Html.LabelFor(c => c.EmpName) : @Html.TextBox("EmpName")
+            @Html.ValidationMessageFor(c => c.EmpName)
+        </div>
         <div>
             Employee Address : @Html.TextBoxFor(c => c.Address)
             @Html.ValidationMessageFor(c => c.Address)
@@ -29,8 +32,9 @@
         <br />
 
         <input type="submit" value="Save/Update" />
-        @Html.ActionLink("Dashboard", "ViewEmployee", "Admin")
-        @Html.ActionLink("Add Employee", "AddEmployee", "Admin")
+        @Html.ActionLink("Dashboard", "ViewEmployee", "Admin")<br />
+        @Html.ActionLink("Add Employee", "AddEmployee", "Admin")<br />
+        @Html.ActionLink("Download", "GetFileContent", "Student")
     }
 </body>
 </html>

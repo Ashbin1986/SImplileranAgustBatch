@@ -17,6 +17,11 @@
 
     @using (Html.BeginForm("ViewEmployee", "Admin", FormMethod.Get))
     {
+        //Partial View Start
+        @Html.Partial("LoginView")
+
+        //Partial View End
+
         <table border="1" cellpadding="6">
             <tr>
                 <th>Employee Name</th>

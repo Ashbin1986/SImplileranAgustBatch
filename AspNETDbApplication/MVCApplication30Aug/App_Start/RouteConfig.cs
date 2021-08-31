@@ -15,7 +15,7 @@ namespace MVCApplication30Aug
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{controller}/{action}/{test}/{id}",
                 defaults: new { controller = "Admin", action = "AddEmployee", id = UrlParameter.Optional }
             );
         }

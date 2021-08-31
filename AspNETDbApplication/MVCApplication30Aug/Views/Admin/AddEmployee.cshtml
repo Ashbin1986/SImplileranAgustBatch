@@ -17,6 +17,12 @@
 <body>
     @using (Html.BeginForm("SaveEmployee", "Admin", FormMethod.Post))
     {
+
+        //Partial View Start
+        @Html.Partial("LoginView")
+
+        //Partial View End
+
         <div>
             Employee Name : @Html.TextBox("EmpName")
             @Html.ValidationMessageFor(c => c.EmpName)

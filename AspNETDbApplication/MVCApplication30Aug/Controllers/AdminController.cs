@@ -16,6 +16,7 @@ namespace MVCApplication30Aug.Controllers
             return View();
         }
 
+        [Route(Name ="testView")]
         public ActionResult ViewEmployee()
         {
             List<Employee> lstEmployee = new List<Employee>();
@@ -33,19 +34,32 @@ namespace MVCApplication30Aug.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        
         public ActionResult AddEmployee()
         {
             // load the UI for you
+            Employee emp = new Employee();
+            emp.Address = "Canada";
+            emp.EmpAge = 100;
+            emp.EmpName = "Test User";
             
-            return View( new Employee());
+            return View( emp);
         }
+        
+
+        [NonAction]
+        [Authorize]
         public ActionResult SaveEmployee(Employee employee)
         {
             if(ModelState.IsValid)
             {
                 TempData["NoofRecords"] = 100;
                 //Save
-               return RedirectToAction("ViewEmployee");
+                //return RedirectToAction("ViewEmployee");
+
+                return RedirectToRoute("testView");
+
             }
             else
             {
@@ -79,5 +93,9 @@ namespace MVCApplication30Aug.Controllers
             //Save employee record
             return View("AddEmployee", new Employee());
         }
+        //public ActionResult LoginView()
+        //{
+        //    return 
+        //}
     }
 }
