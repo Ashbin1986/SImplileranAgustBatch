@@ -1,0 +1,12 @@
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\SimpliLearn.BusinessLayer.dll
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\SimpliLearn.BusinessLayer.pdb
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\obj\Debug\SimpliLearn.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\obj\Debug\SimpliLearn.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\obj\Debug\SimpliLearn.BusinessLayer.dll
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\obj\Debug\SimpliLearn.BusinessLayer.pdb
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\SimpliLearn.DataLayer.dll
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\SimpliLearn.DataLayer.pdb
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\SimpliLearn.DataLayer.dll.config
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\obj\Debug\SimpliLearn.BusinessLayer.csproj.CopyComplete
