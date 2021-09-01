@@ -9,5 +9,7 @@ namespace SimpliLearn.DataAccessLayer.Repositories
     public interface IUserRepository
     {
         void AddUser(UserCredentail user);
+
+       
     }
 }

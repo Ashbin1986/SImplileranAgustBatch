@@ -11,5 +11,9 @@ namespace SimpliLearn.DataAccessLayer.Repositories
         List<Student> GetStudents();
 
         List<Event> GetEvents();
+
+        void AddStudent(Student student);
+
+        Student GetStudentById(int StudentId);
     }
 }

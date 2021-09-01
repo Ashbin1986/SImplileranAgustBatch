@@ -8,6 +8,7 @@ namespace SimpliLearn.DataAccessLayer.Repositories
 {
     class UserRepository : IUserRepository
     {
+     
         public void AddUser(UserCredentail user)
         {
             throw new NotImplementedException();

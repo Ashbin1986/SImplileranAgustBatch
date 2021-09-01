@@ -1,4 +1,5 @@
 ﻿using SimpliLearn.BusinessLayer;
+using SimpliLearn.BusinessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +13,28 @@ namespace MVC_EFUI.Controllers
         // GET: EventManagement
         public ActionResult Index()
         {
-            return View();
+            IService _eventService = new Service();
+            var studentLists = _eventService.GetStudentEntities();
+            return View(studentLists);
         }
 
         // GET: EventManagement/Details/5
         public ActionResult Details(int id)
         {
             IService _eventService = new Service();
-            var studentLists = _eventService.GetStudentEntities();
-            var student = studentLists.FirstOrDefault(c => c.StudentId == id);
+            //var studentLists = _eventService.GetStudentEntities();
+            //var student = studentLists.FirstOrDefault(c => c.StudentId == id);
+            var response = _eventService.GetStudentById(id);
 
-            return View(student);
+            return View(response);
         }
 
         // GET: EventManagement/Create
         public ActionResult Create()
         {
-            return View();
+            StudentEntity student = new StudentEntity();
+
+            return View(student);
         }
 
         // POST: EventManagement/Create
@@ -37,7 +43,15 @@ namespace MVC_EFUI.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                IService service = new Service();
+
+                service.AddStudent(new StudentEntity()
+                {
+                    StudentName = collection["StudentName"],
+                    Gender = collection["Gender"],
+                    Email = collection["Email"],
+                    IsActive = true,
+                });
 
                 return RedirectToAction("Index");
             }

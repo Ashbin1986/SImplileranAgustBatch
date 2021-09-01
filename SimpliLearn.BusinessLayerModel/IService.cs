@@ -13,5 +13,9 @@ namespace SimpliLearn.BusinessLayer
 
         List<StudentEntity> GetStudentEntities();
 
+        void AddStudent(StudentEntity studentEntity);
+
+        StudentEntity GetStudentById(int StudentId);
+
     }
 }

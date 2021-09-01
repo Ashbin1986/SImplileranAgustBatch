@@ -20,8 +20,7 @@ namespace SimpliLearn.DataAccessLayer.Repositories
         {
             using (SchoolManagementEntities dbContext = new SchoolManagementEntities())
             {
-                var st =  dbContext.Students.ToList();
-                return st;
+                return dbContext.Students.ToList().Where(c=>c.IsActive == true).ToList();
             }
         }
 
@@ -37,6 +36,23 @@ namespace SimpliLearn.DataAccessLayer.Repositories
                 }
                 dbContext.SaveChanges();
 
+            }
+        }
+        public void AddStudent(Student student)
+        {
+            using (SchoolManagementEntities dbContext = new SchoolManagementEntities())
+            {
+                dbContext.Students.Add(student);
+                dbContext.SaveChanges();
+
+            }
+        }
+
+        public Student GetStudentById(int StudentId)
+        {
+            using (SchoolManagementEntities dbContext = new SchoolManagementEntities())
+            {
+                return dbContext.Students.Where(c => c.IsActive == true && c.StudentId == StudentId).FirstOrDefault();
             }
         }
     }
