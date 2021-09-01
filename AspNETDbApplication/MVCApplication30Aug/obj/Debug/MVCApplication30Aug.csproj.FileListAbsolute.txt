@@ -77,3 +77,7 @@ C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\obj
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\obj\Debug\MVCApplication30Aug.csproj.CopyComplete
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\obj\Debug\MVCApplication30Aug.dll
 C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\obj\Debug\MVCApplication30Aug.pdb
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\bin\EntityFramework.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\bin\EntityFramework.SqlServer.dll
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\bin\EntityFramework.xml
+C:\AugustBatch\SImplileranAgustBatch\AspNETDbApplication\MVCApplication30Aug\bin\EntityFramework.SqlServer.xml

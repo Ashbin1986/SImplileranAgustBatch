@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SchoolManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Event_StudentMapping">
+          <Key>
+            <PropertyRef Name="Event_StudentId" />
+          </Key>
+          <Property Name="Event_StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventId" Type="int" />
+          <Property Name="StudentId" Type="int" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="50" />
+          <Property Name="EventDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="varchar" MaxLength="100" />
+          <Property Name="Gender" Type="char" MaxLength="2" />
+          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserCredentails">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Event_StudentMapping_Events">
+          <End Role="Events" Type="Self.Events" Multiplicity="0..1" />
+          <End Role="Event_StudentMapping" Type="Self.Event_StudentMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="Event_StudentMapping">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_StudentMapping_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="Event_StudentMapping" Type="Self.Event_StudentMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="Event_StudentMapping">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchoolManagementModelStoreContainer">
+          <EntitySet Name="Event_StudentMapping" EntityType="Self.Event_StudentMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCredentails" EntityType="Self.UserCredentails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Event_StudentMapping_Events" Association="Self.FK_Event_StudentMapping_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Event_StudentMapping" EntitySet="Event_StudentMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_StudentMapping_Student" Association="Self.FK_Event_StudentMapping_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Event_StudentMapping" EntitySet="Event_StudentMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Event_StudentMapping">
+          <Key>
+            <PropertyRef Name="Event_StudentId" />
+          </Key>
+          <Property Name="Event_StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventId" Type="Int32" />
+          <Property Name="StudentId" Type="Int32" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Event_StudentMapping_Events" FromRole="Event_StudentMapping" ToRole="Events" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_Event_StudentMapping_Student" FromRole="Event_StudentMapping" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Event_StudentMapping" Relationship="Self.FK_Event_StudentMapping_Events" FromRole="Events" ToRole="Event_StudentMapping" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Event_StudentMapping" Relationship="Self.FK_Event_StudentMapping_Student" FromRole="Student" ToRole="Event_StudentMapping" />
+        </EntityType>
+        <EntityType Name="UserCredentail">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Event_StudentMapping_Events">
+          <End Role="Events" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Event_StudentMapping" Type="Self.Event_StudentMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="Event_StudentMapping">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_StudentMapping_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="Event_StudentMapping" Type="Self.Event_StudentMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="Event_StudentMapping">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchoolManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Event_StudentMapping" EntityType="Self.Event_StudentMapping" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <EntitySet Name="UserCredentails" EntityType="Self.UserCredentail" />
+          <AssociationSet Name="FK_Event_StudentMapping_Events" Association="Self.FK_Event_StudentMapping_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Event_StudentMapping" EntitySet="Event_StudentMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_StudentMapping_Student" Association="Self.FK_Event_StudentMapping_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Event_StudentMapping" EntitySet="Event_StudentMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolManagementModelStoreContainer" CdmEntityContainer="SchoolManagementEntities">
+          <EntitySetMapping Name="Event_StudentMapping">
+            <EntityTypeMapping TypeName="SchoolManagementModel.Event_StudentMapping">
+              <MappingFragment StoreEntitySet="Event_StudentMapping">
+                <ScalarProperty Name="Event_StudentId" ColumnName="Event_StudentId" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="SchoolManagementModel.Event">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="SchoolManagementModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCredentails">
+            <EntityTypeMapping TypeName="SchoolManagementModel.UserCredentail">
+              <MappingFragment StoreEntitySet="UserCredentails">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

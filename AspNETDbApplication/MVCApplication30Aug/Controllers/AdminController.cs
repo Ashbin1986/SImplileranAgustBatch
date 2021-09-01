@@ -16,9 +16,17 @@ namespace MVCApplication30Aug.Controllers
             return View();
         }
 
-        [Route(Name ="testView")]
         public ActionResult ViewEmployee()
         {
+            List<Student> studentRecord = new List<Student>();
+
+            using (SchoolManagementEntities dbContext = new SchoolManagementEntities())
+            {
+                studentRecord = dbContext.Students.ToList();
+            }
+
+
+
             List<Employee> lstEmployee = new List<Employee>();
             lstEmployee.Add(new Employee { EmpName = "User1" , EmpAge = 45 , Address ="USA" });
             lstEmployee.Add(new Employee { EmpName = "User2", EmpAge = 35, Address = "Singapore" });
@@ -34,7 +42,6 @@ namespace MVCApplication30Aug.Controllers
             return View();
         }
 
-        [AllowAnonymous]
         
         public ActionResult AddEmployee()
         {
@@ -48,8 +55,6 @@ namespace MVCApplication30Aug.Controllers
         }
         
 
-        [NonAction]
-        [Authorize]
         public ActionResult SaveEmployee(Employee employee)
         {
             if(ModelState.IsValid)

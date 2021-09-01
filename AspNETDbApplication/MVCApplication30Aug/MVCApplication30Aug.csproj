@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,11 +132,50 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HRMSController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Event.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event_StudentMapping.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FetchStudentRecords_Result.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FetchUserInformation_Result.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEventParticipants_Result.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEvents_Result.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserCredentail.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -153,6 +200,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SMS.Context.cs</LastGenOutput>
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </Content>
+    <Content Include="SMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMS.edmx</DependentUpon>
+      <LastGenOutput>SMS.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,6 +233,13 @@
     <Content Include="Views\HRMS\Details.cshtml" />
     <Content Include="Views\HRMS\Create.cshtml" />
     <Content Include="Views\HRMS\Edit.cshtml" />
+    <EntityDeploy Include="SMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SMS.edmx.diagram">
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -192,6 +256,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
