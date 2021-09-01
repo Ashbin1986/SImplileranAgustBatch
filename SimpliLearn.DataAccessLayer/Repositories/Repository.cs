@@ -55,5 +55,22 @@ namespace SimpliLearn.DataAccessLayer.Repositories
                 return dbContext.Students.Where(c => c.IsActive == true && c.StudentId == StudentId).FirstOrDefault();
             }
         }
+
+        public string GetEventNameByStudentId(int studentId)
+        {
+            string eventName = "N/A";
+
+            using (SchoolManagementEntities dbContext = new SchoolManagementEntities())
+            {
+                var eventMapping = dbContext.Event_StudentMapping.Where(c => c.StudentId == studentId).FirstOrDefault();
+
+                if(eventMapping !=null)
+                {
+                    eventName = dbContext.Events.Where(c => c.EventId == eventMapping.EventId).FirstOrDefault().EventName;
+                }
+            }
+
+            return eventName;
+        }
     }
 }

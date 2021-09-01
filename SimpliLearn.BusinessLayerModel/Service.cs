@@ -92,7 +92,15 @@ namespace SimpliLearn.BusinessLayer
             {
                 foreach (var e in students)
                 {
-                    studentEntities.Add(new StudentEntity { StudentId = e.StudentId, StudentName = e.StudentName, Email = e.Email, Gender = e.Gender });
+                    var eventName = _repository.GetEventNameByStudentId(e.StudentId);
+
+                    studentEntities.Add(new StudentEntity
+                    { 
+                        StudentId = e.StudentId,
+                        StudentName = e.StudentName,
+                        Email = e.Email, Gender = e.Gender,
+                        EventName = eventName ?? "N/A"
+                    });
                 }
             }
 

@@ -15,5 +15,6 @@ namespace SimpliLearn.BusinessLayer.Models
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
+        public string EventName { get; set; }
     }
 }
