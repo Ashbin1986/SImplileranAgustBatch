@@ -20,6 +20,51 @@ namespace ClintofWebService.StudentClient {
     public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmpNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string EmpName {
+            get {
+                return this.EmpNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmpNameField, value) != true)) {
+                    this.EmpNameField = value;
+                    this.RaisePropertyChanged("EmpName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="StudentClient.StudentServiceSoap")]
     public interface StudentServiceSoap {
@@ -37,6 +82,13 @@ namespace ClintofWebService.StudentClient {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRecords", ReplyAction="*")]
         System.Threading.Tasks.Task<ClintofWebService.StudentClient.GetRecordsResponse> GetRecordsAsync(ClintofWebService.StudentClient.GetRecordsRequest request);
+        
+        // CODEGEN: Generating message contract since element name employee from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddEmployee", ReplyAction="*")]
+        ClintofWebService.StudentClient.AddEmployeeResponse AddEmployee(ClintofWebService.StudentClient.AddEmployeeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddEmployee", ReplyAction="*")]
+        System.Threading.Tasks.Task<ClintofWebService.StudentClient.AddEmployeeResponse> AddEmployeeAsync(ClintofWebService.StudentClient.AddEmployeeRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -161,6 +213,67 @@ namespace ClintofWebService.StudentClient {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddEmployeeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmployee", Namespace="http://tempuri.org/", Order=0)]
+        public ClintofWebService.StudentClient.AddEmployeeRequestBody Body;
+        
+        public AddEmployeeRequest() {
+        }
+        
+        public AddEmployeeRequest(ClintofWebService.StudentClient.AddEmployeeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddEmployeeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ClintofWebService.StudentClient.Employee employee;
+        
+        public AddEmployeeRequestBody() {
+        }
+        
+        public AddEmployeeRequestBody(ClintofWebService.StudentClient.Employee employee) {
+            this.employee = employee;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddEmployeeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmployeeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ClintofWebService.StudentClient.AddEmployeeResponseBody Body;
+        
+        public AddEmployeeResponse() {
+        }
+        
+        public AddEmployeeResponse(ClintofWebService.StudentClient.AddEmployeeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class AddEmployeeResponseBody {
+        
+        public AddEmployeeResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface StudentServiceSoapChannel : ClintofWebService.StudentClient.StudentServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -232,6 +345,30 @@ namespace ClintofWebService.StudentClient {
             ClintofWebService.StudentClient.GetRecordsRequest inValue = new ClintofWebService.StudentClient.GetRecordsRequest();
             inValue.Body = new ClintofWebService.StudentClient.GetRecordsRequestBody();
             return ((ClintofWebService.StudentClient.StudentServiceSoap)(this)).GetRecordsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ClintofWebService.StudentClient.AddEmployeeResponse ClintofWebService.StudentClient.StudentServiceSoap.AddEmployee(ClintofWebService.StudentClient.AddEmployeeRequest request) {
+            return base.Channel.AddEmployee(request);
+        }
+        
+        public void AddEmployee(ClintofWebService.StudentClient.Employee employee) {
+            ClintofWebService.StudentClient.AddEmployeeRequest inValue = new ClintofWebService.StudentClient.AddEmployeeRequest();
+            inValue.Body = new ClintofWebService.StudentClient.AddEmployeeRequestBody();
+            inValue.Body.employee = employee;
+            ClintofWebService.StudentClient.AddEmployeeResponse retVal = ((ClintofWebService.StudentClient.StudentServiceSoap)(this)).AddEmployee(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ClintofWebService.StudentClient.AddEmployeeResponse> ClintofWebService.StudentClient.StudentServiceSoap.AddEmployeeAsync(ClintofWebService.StudentClient.AddEmployeeRequest request) {
+            return base.Channel.AddEmployeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ClintofWebService.StudentClient.AddEmployeeResponse> AddEmployeeAsync(ClintofWebService.StudentClient.Employee employee) {
+            ClintofWebService.StudentClient.AddEmployeeRequest inValue = new ClintofWebService.StudentClient.AddEmployeeRequest();
+            inValue.Body = new ClintofWebService.StudentClient.AddEmployeeRequestBody();
+            inValue.Body.employee = employee;
+            return ((ClintofWebService.StudentClient.StudentServiceSoap)(this)).AddEmployeeAsync(inValue);
         }
     }
 }

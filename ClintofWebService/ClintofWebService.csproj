@@ -118,6 +118,9 @@
     <Content Include="Connected Services\StudentClient\ClintofWebService.StudentClient.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\StudentClient\ClintofWebService.StudentClient.AddEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\StudentClient\StudentService.disco" />
     <None Include="Connected Services\StudentClient\configuration91.svcinfo" />
     <None Include="Connected Services\StudentClient\configuration.svcinfo" />

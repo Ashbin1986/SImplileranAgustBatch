@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using WebServiceSample.Models;
 
 namespace WebServiceSample
 {
@@ -13,7 +14,7 @@ namespace WebServiceSample
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class StudentService : System.Web.Services.WebService
     {
 
@@ -31,6 +32,13 @@ namespace WebServiceSample
             str.Add("2");
 
             return str;
+
+        }
+
+        [WebMethod]
+        public void AddEmployee(Employee employee )
+        {
+            //TODO -- Save into DB
 
         }
     }
