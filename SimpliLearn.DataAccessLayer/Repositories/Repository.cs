@@ -20,7 +20,12 @@ namespace SimpliLearn.DataAccessLayer.Repositories
         {
             using (SchoolManagementEntities dbContext = new SchoolManagementEntities())
             {
-                return dbContext.Students.ToList().Where(c=>c.IsActive == true).ToList();
+                //var records = from m in dbContext.Students select m;
+
+                dbContext.Database.SqlQuery<Student>("Select * from Student");
+
+
+                return dbContext.Students.ToList().Where(c => c.IsActive == true).ToList().OrderByDescending(c => c.CreatedDate).ToList();
             }
         }
 
@@ -71,6 +76,11 @@ namespace SimpliLearn.DataAccessLayer.Repositories
             }
 
             return eventName;
+        }
+
+        public List<Student> GetStudents(int Srudentid)
+        {
+            throw new NotImplementedException();
         }
     }
 }

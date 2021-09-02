@@ -10,14 +10,4 @@ C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn
 C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.csproj.CopyComplete
 C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.dll
 C:\Users\ashbi\source\repos\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.pdb
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\bin\Debug\SimpliLearn.BusinessLayerModel.dll
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\bin\Debug\SimpliLearn.BusinessLayerModel.pdb
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\bin\Debug\SimpliLearn.DataAccessLayer.dll
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\bin\Debug\EntityFramework.dll
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\bin\Debug\SimpliLearn.DataAccessLayer.pdb
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\bin\Debug\SimpliLearn.DataAccessLayer.dll.config
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.csproj.AssemblyReference.cache
 C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.csproj.CoreCompileInputs.cache
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.csproj.CopyComplete
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.dll
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.BusinessLayerModel\obj\Debug\SimpliLearn.BusinessLayerModel.pdb

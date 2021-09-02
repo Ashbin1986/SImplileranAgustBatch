@@ -64,6 +64,7 @@ namespace SimpliLearn.BusinessLayer
             IRepository _repository = new Repository();
 
             var student = _repository.GetStudentById(StudentId);
+            
 
             return new StudentEntity()
             {

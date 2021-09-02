@@ -16,5 +16,53 @@ namespace SimpliLearn.DataAccessLayer.Repositories
 
         Student GetStudentById(int StudentId);
         string GetEventNameByStudentId(int studentId);
+
+        List<Student> GetStudents(int Srudentid);
+
+       
+    }
+
+    public interface IDel
+    {
+        void del();
+
+    }
+
+    public class Child : IRepository,IDel
+    {
+        public void AddStudent(Student student)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void del()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetEventNameByStudentId(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Event> GetEvents()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Student GetStudentById(int StudentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Student> GetStudents()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Student> GetStudents(int Srudentid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

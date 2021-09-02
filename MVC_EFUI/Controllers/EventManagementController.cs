@@ -15,6 +15,10 @@ namespace MVC_EFUI.Controllers
         {
             IService _eventService = new Service();
             var studentLists = _eventService.GetStudentEntities();
+            studentLists.Take(2);
+            studentLists.Skip(2);
+
+            ViewData["TotalRecords"] = studentLists.Count();
             return View(studentLists);
         }
 
@@ -22,8 +26,9 @@ namespace MVC_EFUI.Controllers
         public ActionResult Details(int id)
         {
             IService _eventService = new Service();
-            //var studentLists = _eventService.GetStudentEntities();
+            var studentLists = _eventService.GetStudentEntities();
             //var student = studentLists.FirstOrDefault(c => c.StudentId == id);
+            var itesm = studentLists.ElementAt(2);
             var response = _eventService.GetStudentById(id);
 
             return View(response);

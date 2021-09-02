@@ -7,10 +7,5 @@ C:\Users\ashbi\source\repos\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.Da
 C:\Users\ashbi\source\repos\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.csproj.CopyComplete
 C:\Users\ashbi\source\repos\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.dll
 C:\Users\ashbi\source\repos\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.pdb
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\bin\Debug\SimpliLearn.DataAccessLayer.dll.config
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\bin\Debug\SimpliLearn.DataAccessLayer.dll
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\bin\Debug\SimpliLearn.DataAccessLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.csproj.AssemblyReference.cache
 C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.csproj.CopyComplete
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.dll
-C:\AugustBatch\SImplileranAgustBatch\SimpliLearn.DataAccessLayer\obj\Debug\SimpliLearn.DataAccessLayer.pdb
