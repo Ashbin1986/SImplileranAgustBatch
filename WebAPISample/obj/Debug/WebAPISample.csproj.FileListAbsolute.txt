@@ -78,8 +78,9 @@ C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Web.WebPages.Deploy
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Web.WebPages.Razor.xml
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Antlr3.Runtime.pdb
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.csproj.AssemblyReference.cache
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.csproj.CoreCompileInputs.cache
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.csproj.CopyComplete
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.pdb
+C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\EntityFramework.dll
+C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\EntityFramework.xml

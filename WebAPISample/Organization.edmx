@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OrgDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfJoining" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EmpManagerMappings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="ManagerId" Type="int" />
+        </EntityType>
+        <EntityType Name="Goal">
+          <Key>
+            <PropertyRef Name="GoalId" />
+          </Key>
+          <Property Name="GoalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GoalDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GoalSubmission">
+          <Key>
+            <PropertyRef Name="SubmissionId" />
+          </Key>
+          <Property Name="SubmissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GoalId" Type="int" />
+          <Property Name="Answer" Type="nvarchar(max)" />
+          <Property Name="SubmittedBy" Type="int" />
+          <Property Name="SubmissionDate" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_EmpManagerMappings_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmpManagerMappings" Type="Self.EmpManagerMappings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="EmpManagerMappings">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GoalSubmission_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="GoalSubmission" Type="Self.GoalSubmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="GoalSubmission">
+              <PropertyRef Name="SubmittedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GoalSubmission_Goal">
+          <End Role="Goal" Type="Self.Goal" Multiplicity="0..1" />
+          <End Role="GoalSubmission" Type="Self.GoalSubmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goal">
+              <PropertyRef Name="GoalId" />
+            </Principal>
+            <Dependent Role="GoalSubmission">
+              <PropertyRef Name="GoalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OrgDBModelStoreContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpManagerMappings" EntityType="Self.EmpManagerMappings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goal" EntityType="Self.Goal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoalSubmission" EntityType="Self.GoalSubmission" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_EmpManagerMappings_Employee" Association="Self.FK_EmpManagerMappings_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmpManagerMappings" EntitySet="EmpManagerMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GoalSubmission_Employee" Association="Self.FK_GoalSubmission_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="GoalSubmission" EntitySet="GoalSubmission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GoalSubmission_Goal" Association="Self.FK_GoalSubmission_Goal">
+            <End Role="Goal" EntitySet="Goal" />
+            <End Role="GoalSubmission" EntitySet="GoalSubmission" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OrgDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfJoining" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GoalSubmissions" Relationship="Self.FK_GoalSubmission_Employee" FromRole="Employee" ToRole="GoalSubmission" />
+          <NavigationProperty Name="EmpManagerMappings" Relationship="OrgDBModel.FK_EmpManagerMappings_Employee" FromRole="Employee" ToRole="EmpManagerMapping" />
+        </EntityType>
+        <EntityType Name="Goal">
+          <Key>
+            <PropertyRef Name="GoalId" />
+          </Key>
+          <Property Name="GoalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GoalDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GoalSubmissions" Relationship="Self.FK_GoalSubmission_Goal" FromRole="Goal" ToRole="GoalSubmission" />
+        </EntityType>
+        <EntityType Name="GoalSubmission">
+          <Key>
+            <PropertyRef Name="SubmissionId" />
+          </Key>
+          <Property Name="SubmissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GoalId" Type="Int32" />
+          <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubmittedBy" Type="Int32" />
+          <Property Name="SubmissionDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_GoalSubmission_Employee" FromRole="GoalSubmission" ToRole="Employee" />
+          <NavigationProperty Name="Goal" Relationship="Self.FK_GoalSubmission_Goal" FromRole="GoalSubmission" ToRole="Goal" />
+        </EntityType>
+        <Association Name="FK_GoalSubmission_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="GoalSubmission" Type="Self.GoalSubmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="GoalSubmission">
+              <PropertyRef Name="SubmittedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GoalSubmission_Goal">
+          <End Role="Goal" Type="Self.Goal" Multiplicity="0..1" />
+          <End Role="GoalSubmission" Type="Self.GoalSubmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goal">
+              <PropertyRef Name="GoalId" />
+            </Principal>
+            <Dependent Role="GoalSubmission">
+              <PropertyRef Name="GoalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OrgDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Goals" EntityType="Self.Goal" />
+          <EntitySet Name="GoalSubmissions" EntityType="Self.GoalSubmission" />
+          <AssociationSet Name="FK_GoalSubmission_Employee" Association="Self.FK_GoalSubmission_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="GoalSubmission" EntitySet="GoalSubmissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GoalSubmission_Goal" Association="Self.FK_GoalSubmission_Goal">
+            <End Role="Goal" EntitySet="Goals" />
+            <End Role="GoalSubmission" EntitySet="GoalSubmissions" />
+          </AssociationSet>
+          <EntitySet Name="EmpManagerMappings" EntityType="OrgDBModel.EmpManagerMapping" />
+          <AssociationSet Name="FK_EmpManagerMappings_Employee" Association="OrgDBModel.FK_EmpManagerMappings_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmpManagerMapping" EntitySet="EmpManagerMappings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EmpManagerMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="ManagerId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="OrgDBModel.FK_EmpManagerMappings_Employee" FromRole="EmpManagerMapping" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_EmpManagerMappings_Employee">
+          <End Type="OrgDBModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="OrgDBModel.EmpManagerMapping" Role="EmpManagerMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="EmpManagerMapping">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OrgDBModelStoreContainer" CdmEntityContainer="OrgDBEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="OrgDBModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goals">
+            <EntityTypeMapping TypeName="OrgDBModel.Goal">
+              <MappingFragment StoreEntitySet="Goal">
+                <ScalarProperty Name="GoalId" ColumnName="GoalId" />
+                <ScalarProperty Name="GoalDescription" ColumnName="GoalDescription" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoalSubmissions">
+            <EntityTypeMapping TypeName="OrgDBModel.GoalSubmission">
+              <MappingFragment StoreEntitySet="GoalSubmission">
+                <ScalarProperty Name="SubmissionId" ColumnName="SubmissionId" />
+                <ScalarProperty Name="GoalId" ColumnName="GoalId" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+                <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpManagerMappings">
+            <EntityTypeMapping TypeName="OrgDBModel.EmpManagerMapping">
+              <MappingFragment StoreEntitySet="EmpManagerMappings">
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
