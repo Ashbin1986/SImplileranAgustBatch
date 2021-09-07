@@ -178,6 +178,7 @@
     <Compile Include="GoalSubmission.cs">
       <DependentUpon>Organization.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployeeReq.cs" />
     <Compile Include="Models\EmployeeRequest.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Organization.Context.cs">

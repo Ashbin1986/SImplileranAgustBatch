@@ -51,6 +51,7 @@ C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\roslyn\vbc.rsp
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\roslyn\VBCSCompiler.exe
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\roslyn\VBCSCompiler.exe.config
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Antlr3.Runtime.dll
+C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\EntityFramework.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Microsoft.Web.Infrastructure.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Newtonsoft.Json.dll
@@ -65,6 +66,7 @@ C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Web.WebPages.Deploy
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Web.WebPages.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Web.WebPages.Razor.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\WebGrease.dll
+C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\EntityFramework.xml
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\Newtonsoft.Json.xml
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Net.Http.Formatting.xml
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\System.Web.Helpers.xml
@@ -82,5 +84,4 @@ C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.csproj.
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.csproj.CopyComplete
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.dll
 C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.pdb
-C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\EntityFramework.dll
-C:\AugustBatch\SImplileranAgustBatch\WebAPISample\bin\EntityFramework.xml
+C:\AugustBatch\SImplileranAgustBatch\WebAPISample\obj\Debug\WebAPISample.csproj.AssemblyReference.cache

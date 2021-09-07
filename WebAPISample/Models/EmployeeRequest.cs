@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebAPISample.Models
 {
-    public class EmployeeRequest
+    public partial class EmployeeRequest
     {
         [Required]
         public string EmployeeName { get; set; }
@@ -21,6 +21,8 @@ namespace WebAPISample.Models
         public string DateOfJoining { get; set; }
 
         public string ManagerName { get; set; }
+
+        public int EmpId{ get; set; }
 
 
     }
