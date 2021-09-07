@@ -16,9 +16,11 @@ namespace WebAPISample.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return "value";
+            List<Employee> employees = new List<Employee>();
+            employees.Add(new Employee { EmpId = 10001 , CreatedDate = DateTime.Now, Email ="test@test.com" });
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, employees);
         }
 
         // POST api/values
