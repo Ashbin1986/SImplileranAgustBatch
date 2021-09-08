@@ -1,0 +1,6 @@
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearnWCFSample.dll.config
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearnWCFSample.dll
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearnWCFSample.pdb
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.csproj.CoreCompileInputs.cache
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.dll
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.pdb

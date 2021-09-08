@@ -13,31 +13,38 @@ namespace AspNETDbApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            UserBL user = new UserBL();
-
-            UserCredentails credentails = new UserCredentails
+            try
             {
-                UserName = txtUserName.Value,
-                Password = txtPassword.Value
-            };
+                UserBL user = new UserBL();
 
-            bool isValidUser = user.GetUserInformation(credentails);
-            
-            if(isValidUser)
-            {
-                // Create Cookies
-                Session["UserName"] = credentails.UserName;
+                UserCredentails credentails = new UserCredentails
+                {
+                    UserName = txtUserName.Value,
+                    Password = txtPassword.Value
+                };
 
-                Response.Redirect("Dashboard.aspx?Login=success");
+                bool isValidUser = user.GetUserInformation(credentails);
+
+                if (isValidUser)
+                {
+                    // Create Cookies
+                    Session["UserName"] = credentails.UserName;
+
+                    Response.Redirect("Dashboard.aspx?Login=success");
+                }
+                else
+                {
+                    lblMessage.Text = "Username/UserPassword is Invalid!.";
+                }
             }
-            else
+            catch
             {
-                lblMessage.Text = "Username/UserPassword is Invalid!.";
+
             }
         }
     }

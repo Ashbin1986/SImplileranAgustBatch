@@ -8,6 +8,7 @@ using WebAPISample.Models;
 
 namespace WebAPISample.Controllers
 {
+    
     public class EmployeeController : ApiController
     {
 
@@ -72,6 +73,7 @@ namespace WebAPISample.Controllers
         }
 
         [HttpGet]
+        [Route("{empid:int:min(1):max(100)}")]
         public HttpResponseMessage GetEmployees(int empId)
         {
             EmployeeResponseData employeeResponseData = new EmployeeResponseData();
