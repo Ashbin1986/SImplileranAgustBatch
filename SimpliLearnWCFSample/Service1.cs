@@ -1,4 +1,5 @@
-﻿using SimpliLearnWCFSample.Models;
+﻿using SimpliLearn.BusinessLayer;
+using SimpliLearnWCFSample.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,9 @@ namespace SimpliLearnWCFSample
 
         public List<Employee> GetEmployees()
         {
+            IService service = new Service();
+            service.GetStudentEntities();
+
             List<Employee> employees = new List<Employee>();
             //Pull data from DB
             employees.Add(new Employee { EmpId = "101" , EmpName ="Ashbin" });

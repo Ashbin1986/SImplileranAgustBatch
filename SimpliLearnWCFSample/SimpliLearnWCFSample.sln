@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpliLearnWCFSample", "SimpliLearnWCFSample.csproj", "{62C62B0E-4F7C-45BE-AEB3-0A90FACC774A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpliLearn.BusinessLayer", "..\..\..\Users\ashbi\source\repos\SimpliLearn.BusinessLayer\SimpliLearn.BusinessLayer.csproj", "{81188796-BF6E-4633-A788-965C1B840F1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpliLearn.DataAccessLayer", "..\..\..\Users\ashbi\source\repos\SimpliLearn.DataAccessLayer\SimpliLearn.DataAccessLayer.csproj", "{67D506D8-6F3C-48B9-ADD1-63FC67497F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpliLearn.BusinessLayerModel", "..\..\..\Users\ashbi\source\repos\SimpliLearn.BusinessLayerModel\SimpliLearn.BusinessLayerModel.csproj", "{133E0287-6AC6-40F2-B490-8DB0AC11CAA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpliLearn.DataLayer", "..\..\..\Users\ashbi\source\repos\SimpliLearn.DataLayer\SimpliLearn.DataLayer.csproj", "{F2D8FE8E-7A0E-4211-B8D1-332234F771CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{62C62B0E-4F7C-45BE-AEB3-0A90FACC774A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62C62B0E-4F7C-45BE-AEB3-0A90FACC774A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62C62B0E-4F7C-45BE-AEB3-0A90FACC774A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81188796-BF6E-4633-A788-965C1B840F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81188796-BF6E-4633-A788-965C1B840F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81188796-BF6E-4633-A788-965C1B840F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81188796-BF6E-4633-A788-965C1B840F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D506D8-6F3C-48B9-ADD1-63FC67497F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D506D8-6F3C-48B9-ADD1-63FC67497F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D506D8-6F3C-48B9-ADD1-63FC67497F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D506D8-6F3C-48B9-ADD1-63FC67497F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{133E0287-6AC6-40F2-B490-8DB0AC11CAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133E0287-6AC6-40F2-B490-8DB0AC11CAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133E0287-6AC6-40F2-B490-8DB0AC11CAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133E0287-6AC6-40F2-B490-8DB0AC11CAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D8FE8E-7A0E-4211-B8D1-332234F771CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D8FE8E-7A0E-4211-B8D1-332234F771CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D8FE8E-7A0E-4211-B8D1-332234F771CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D8FE8E-7A0E-4211-B8D1-332234F771CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

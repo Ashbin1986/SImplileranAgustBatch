@@ -10,9 +10,9 @@ namespace WCFClient
     public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            WCFServiceClient.Service1Client service1Client = new WCFServiceClient.Service1Client();
-            var employee = service1Client.GetEmployees();
+        { 
+        //    WCFServiceClient.Service1Client service1Client = new WCFServiceClient.Service1Client();
+        //    var employee = service1Client.GetEmployees();
         }
     }
 }

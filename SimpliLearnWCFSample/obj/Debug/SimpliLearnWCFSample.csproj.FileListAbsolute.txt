@@ -4,3 +4,12 @@ C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearnW
 C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.csproj.CoreCompileInputs.cache
 C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.dll
 C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.pdb
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearn.BusinessLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearn.DataLayer.dll
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\EntityFramework.dll
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearn.BusinessLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearn.DataLayer.pdb
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\SimpliLearn.DataLayer.dll.config
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\bin\Debug\EntityFramework.xml
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.csproj.AssemblyReference.cache
+C:\AugustBatch\SImplileranAgustBatch\SimpliLearnWCFSample\obj\Debug\SimpliLearnWCFSample.csproj.CopyComplete
